@@ -13,7 +13,8 @@ def scan(ip):
     arp_request = scapy.ARP(pdst=ip) #create ip packet
     broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff") # create ethernet packet
     arp_request_broadcast = broadcast/arp_request #combine together the packets
-    answered_list = scapy.srp(arp_request_broadcast, timeout=1, verbose="False")[0] #send the packet and receive the response
+    answered_list = scapy.srp(arp_request_broadcast, timeout=1, verbose=False)[0] #send the packet and receive the response
+
     client_list = []
     for element in answered_list:
         client_dict = {"ip": element[1].psrc, "mac": element[1].hwsrc}
