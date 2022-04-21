@@ -1,2 +1,2 @@
 # repoGit
-my repo for php prject
+my repo for automation scripts
